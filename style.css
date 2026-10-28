@@ -644,3 +644,131 @@ body {
         grid-template-columns: 1fr;
     }
 }
+/* ==========================================================================
+   Responsive & Adaptive UI/UX Design (Mobile & Desktop Optimization)
+   ========================================================================== */
+
+/* 1. الشاشات المتوسطة والكبيرة (اللابتوب وأجهزة التابلت) */
+@media (max-width: 1024px) {
+    .hero {
+        padding: 7rem 5% 3rem;
+    }
+
+    .hero-title {
+        font-size: 2.8rem;
+    }
+
+    /* تحويل شبكة Bento Grid للعمل بشكل متناسق في التابلت */
+    .bento-grid, .projects-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.25rem;
+    }
+
+    .bento-card-large, .bento-card-wide {
+        grid-column: span 2 !important;
+    }
+}
+
+/* 2. شاشات الجوال والهواتف الذكية (Mobile Phones) */
+@media (max-width: 768px) {
+    /* ضبط شريط التنقل (Navbar) في الجوال */
+    .navbar {
+        padding: 1rem 5%;
+    }
+
+    .nav-links {
+        display: none; /* أو تفعيل قائمة منسدلة إن وُجدت */
+    }
+
+    /* ضبط الهيرو وفيديو الخلفية على شاشة الهاتف */
+    .hero {
+        min-height: 100vh;
+        padding: 7rem 1.5rem 3rem;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-title {
+        font-size: 2.2rem;
+        line-height: 1.2;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .hero-description {
+        font-size: 0.95rem;
+        margin-bottom: 2rem;
+    }
+
+    /* جعل الأزرار تأخذ العرض المناسب وتترتب عمودياً */
+    .hero-cta {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.8rem;
+    }
+
+    .hero-cta .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* تحويل كامل شبكات Bento Grid إلى عمود واحد احترافي على الموبايل */
+    .bento-grid, 
+    .projects-grid, 
+    .about-grid, 
+    .skills-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+
+    .bento-card, 
+    .bento-card-large, 
+    .bento-card-wide,
+    .project-card,
+    .about-card {
+        grid-column: span 1 !important;
+        grid-row: auto !important;
+        padding: 1.25rem !important;
+    }
+
+    /* ضبط أبعاد الصور والمجسمات لتتناسب مع شاشة الجوال */
+    .project-img, .brand-img {
+        height: 200px;
+        object-fit: cover;
+    }
+
+    /* ضبط كارد الإحصائيات (Stats) لمنع أي انكسار أو قص للأرقام */
+    .stats-card {
+        flex-direction: row !important;
+        justify-content: space-around;
+        text-align: center;
+        padding: 1.25rem !important;
+    }
+
+    .stat-item h3 {
+        font-size: 2rem !important;
+    }
+
+    .stat-item p {
+        font-size: 0.8rem !important;
+    }
+}
+
+/* 3. الشاشات الصغيرة جداً (Small Mobile Devices - iPhone SE etc.) */
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .stats-card {
+        flex-direction: column !important;
+        gap: 1rem;
+    }
+}
